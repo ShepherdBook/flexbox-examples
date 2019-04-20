@@ -5,17 +5,14 @@ class FlexboxExamples extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.box}/>
-
-        <View style={styles.box}/>
 
         {/* Flex sizes an element relative to its siblings */}
-        <View style={[styles.box, {flex: 2}]} />
+        <View style={[styles.box, {flex: 1}]} />
 
         {/* Override alignment using alignSelf */}
-        <View style={[styles.box, {alignSelf: 'flex-end'}]}/>
+        <View style={[styles.box, {flex: 2, alignSelf: 'flex-end'}]} />
 
-        <View style={styles.box}/>
+        <View style={[styles.box, {flex: 3}]} />
       </View>
     )
   }
@@ -36,7 +33,7 @@ const styles = StyleSheet.create({
     height: 50, // Overrides alignItems: 'stretch' IF flexDirection: 'row'
     width: 50, // Overrides alignItems: 'stretch' IF flexDirection: 'column'
     backgroundColor: '#e76e63',
-    margin: 10,
+    margin: 10, // Dimensions in React Native are unitless
   }
 })
 
